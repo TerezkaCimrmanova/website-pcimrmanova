@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Účetnictví Petra Cimrmanová</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Arial', Arial, Helvetica, sans-serif;
+            font-size: 1.2rem;
+        }
+
+        .w3-bar,
+        button {
+            color: whitesmoke;
+            font-family: 'Arial', Arial, Helvetica, sans-serif;
+            font-size: 150px;
+            font-weight: bold;
+            letter-spacing: 0px;
+            line-height: 1;
+            text-align: center
+        }
+
+        h1 {
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 50px;
+            font-weight: bold;
+            letter-spacing: 0px;
+            line-height: 1
+        }
+
+        .container {
+            background-color: #ABC3CD;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            border-radius: 7px;
+            margin: 3rem 0;
+            justify-content: space-between;
+        }
+
+        .item {
+            text-align: center;
+            margin: 0.4rem;
+        }
+
+        .itemHead {
+            text-align: center;
+            background-color: #f1f1f1;
+            width: 100%;
+            margin: 1rem;
+            border-radius: 7px;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-card w3-left-align w3-large" style="background-color: #ABC3CD">
+            <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red"
+                href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i
+                    class="fa fa-bars"></i></a>
+            <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white"
+                style="color: #ABC3CD!important">Úvod</a>
+            <a href="#services" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Nabídka
+                služeb</a>
+            <a href="#pricelist" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Ceník</a>
+            <a href="#links" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Důležité
+                odkazy</a>
+            <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Kontakt</a>
+            <a href="#impresum" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Impresum</a>
+        </div>
+
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+            <a href="#services" class="w3-bar-item w3-button w3-padding-large">Nabídka služeb</a>
+            <a href="#pricelist" class="w3-bar-item w3-button w3-padding-large">Ceník</a>
+            <a href="#links" class="w3-bar-item w3-button w3-padding-large">Důležité odkazy</a>
+            <a href="#contact" class="w3-bar-item w3-button w3-padding-large">Kontakt</a>
+            <a href="#impresum" class="w3-bar-item w3-button w3-padding-large">Impresum</a>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="w3-container w3-center"
+        style="padding:128px 16px; background-image: url('/Users/terezacimrmanova/source/mama/bg-img.jpeg'); background-size: cover;">
+        <h1 class="w3-margin w3-jumbo" style="color:whitesmoke">ÚČETNÍ SLUŽBY PETRA CIMRMANOVÁ</h1>
+        <p class="w3-xlarge" style="font-weight: bold; color:whitesmoke ; padding: 32px;">Profesionální účetní řešení pro aše podnikání.
+        </p>
+        <button class="w3-button w3-padding-large w3-large w3-margin-top"
+            style="color: whitesmoke; background-color: #ABC3CD" onclick="window.location.href='#contact'">NAVÁZAT
+            SPOLUPRÁCI</button>
+    </header>
+
+    <!--Home-->
+    <div class="w3-row-padding w3-padding-64 w3-container">
+        <div class="w3-content">
+            <h1>Úvod</h1>
+            <h5 class="w3-padding-14" style="text-align: justify;">
+                Vítejte na mé webové stránce, kde se specializuji na poskytování komplexních účetních služeb pro
+                podnikatele a firmy. Moje dlouholeté zkušenosti a odborné znalosti v oboru mě umožňují pečlivě a
+                spolehlivě
+                spravovat Vaše účetní záležitosti, což Vám umožní plně se soustředit na rozvoj Vašeho podnikání.</h5>
+
+            <h5 class="w3-padding-14" style="text-align: justify;">
+                Zanechte starosti s účetnictvím mně a začněte
+                se plně soustředit na to, co děláte nejlépe - rozvíjet a růst Vašeho podnikání.
+                Kontaktujte mě dnes a začněme společně pracovat na Vašem úspěchu!</h5>
+        </div>
+    </div>
+
+    <!--Services-->
+    <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container" id="services">
+        <div class="w3-content">
+            <div class="w3-third w3-center">
+                <i class="fa fa-paperclip w3-padding-64 w3-margin-right"
+                    style="font-size: 9rem!important; color:#ABC3CD"></i>
+            </div>
+            <div class="w3-twothird">
+                <h1>Nabídka služeb</h1>
+
+                <h5 class="w3-padding-32" style="text-align: justify;">
+                    Poskytuji širokou škálu účetních služeb, které jsou přizpůsobeny Vašim individuálním potřebám.
+                    Zajišťuji kompletní vedení účetní evidence, včetně fakturace, bankovních transakcí, účtování nákladů
+                    a výnosů a dalších finančních operací.
+                    Pomohu Vám při řešení daňových záležitostí, abyste měli maximální efektivitu a minimalizovali daňové
+                    povinnosti.
+                    Mimo to spravuji mzdy zaměstnanců a řeším veškeré související agendy včetně sociálního a zdravotního
+                    pojištění.
+                </h5>
+            </div>
+        </div>
+    </div>
+
+    <!--Pricelist-->
+    <div class="w3-row-padding w3-padding-64 w3-container" id="pricelist">
+        <div class="w3-content">
+            <h1>Ceník</h1>
+            <h5 class="w3-padding-14" style="text-align: justify;">
+                Ceník je orientační a záleží na vzájemné dohodě, v ceně je zahrnuto zpracování dokladů, vyhotovení
+                DPH, kontrolního hlášení, odesílání potřebných dokladů na úřady, komunikace s úřady,
+                předávání výstupů z účetnictví, tj. výsledovky, rozvahy, rozpis závazků a pohledávek, vedení pokladní
+                knihy.
+                <br>
+                <br>Zpracování mezd obsahuje přihlášení, odhlášení, zpracování ročního zúčtování daně, komunikaci s
+                Českou správou sociálního zabezpečení a zdravotní pojišťovnou.
+
+            </h5>
+
+            <div class="container">
+                <div class="itemHead">Daňová evidence</div>
+                <div class="item" style="width: 30%"></div>
+                <div class="item" style="width: 30%"><strong>Neplátce DPH</strong></div>
+                <div class="item" style="width: 30%"><strong>Plátce DPH</strong></div>
+                <div class="item" style="width: 30%"><strong>do 100 účetních položek</strong></div>
+                <div class="item" style="width: 30%">1.200,-</div>
+                <div class="item" style="width: 30%">1.500,-</div>
+                <div class="item" style="width: 30%"><strong>nad 100 účetních položek</strong></div>
+                <div class="item" style="width: 30%">dle dohody</div>
+                <div class="item" style="width: 30%">dle dohody</div>
+            </div>
+
+            <div class="container">
+                <div class="itemHead">Účetnictví</div>
+                <div class="item" style="width: 30%"></div>
+                <div class="item" style="width: 30%"><strong>Neplátce DPH</strong></div>
+                <div class="item" style="width: 30%"><strong>Plátce DPH</strong></div>
+                <div class="item" style="width: 30%"><strong>do 100 účetních položek</strong></div>
+                <div class="item" style="width: 30%">2.200,-</div>
+                <div class="item" style="width: 30%">2.500,-</div>
+                <div class="item" style="width: 30%"><strong>do 200 účetních položek</strong></div>
+                <div class="item" style="width: 30%">3.500,-</div>
+                <div class="item" style="width: 30%">4.000,-</div>
+                <div class="item" style="width: 30%"><strong>nad 200 účetních položek</strong></div>
+                <div class="item" style="width: 30%">dle dohody</div>
+                <div class="item" style="width: 30%">dle dohody</div>
+            </div>
+            <div class="container" style="margin-bottom: 0px!important">
+                <div class="itemHead">Mzdy</div>
+                <div class="item" style="width: 45%"><strong>cena za 1 pracovníka </strong></div>
+                <div class="item" style="width: 45%">250,-</div>
+            </div>
+            <h5 class="w3-padding-14" style="margin-top:40px; text-align: center;"><strong>Pro bližší informace ohledně
+                    cen jednotlivých
+                    služeb mě neváhejte <a href="#contact">kontaktovat.</a></strong></h5>
+        </div>
+    </div>
+
+    <!--Links-->
+    <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container" id="links">
+        <div class="w3-content">
+            <div class="w3-third w3-center">
+            </div>
+            <div>
+                <h1>Užitečné odkazy</h1>
+                <div class="w3-row-padding">
+                    <div class="w3-col m4 w3-margin-bottom" style="padding: 24px; margin-top:20px">
+                        <div class="w3-light-grey">
+                            <a href="https://info.mojedatovaschranka.cz/info/cs/" id="datovka"><img
+                                    src="/Users/terezacimrmanova/source/mama/ds-new.jpeg" alt="Datové schránky"
+                                    style="width:100%"></a>
+                        </div>
+                    </div>
+                    <div class="w3-col m4 w3-margin-bottom" style="padding: 24px; margin-top:20px">
+                        <div class="w3-light-grey">
+                            <a href="https://www.financnisprava.cz" id="finSprava"><img
+                                    src="/Users/terezacimrmanova/source/mama/fs-logo-new.png" alt="Finanční správa"
+                                    style="width: 100%;"></a>
+                        </div>
+                    </div>
+                    <div class="w3-col m4 w3-margin-bottom" style="padding: 24px; margin-top:20px">
+                        <div class="w3-light-grey">
+                            <a href="https://www.cssz.cz" id="cssz"><img
+                                    src="/Users/terezacimrmanova/source/mama/cssz-new.jpeg" alt="ČSSZ"
+                                    style="width:100%"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Contact-->
+    <div class="w3-container w3-black w3-opacity w3-padding-64" id="contact">
+        <div class="w3-content" style="color:#ABC3CD;">
+            <h1 style="text-align: center;">Kontakt</h1>
+            <h5 class="w3-margin" style="text-align: center;">
+                V případě, že máte zájem o mé účetní služby nebo potřebujete další informace, neváhejte mě kontaktovat.
+                Ráda Vám odpovím na Vaše dotazy a domluvím si s Vámi osobní schůzku, během níž společně probereme Vaše
+                požadavky a přizpůsobíme mé služby Vašim potřebám.
+            </h5>
+            <div class="w3-col m3 w3-margin-bottom" style="text-align: center;">
+                <i class="fa fa-envelope w3-padding-32 w3-text-opacity w3-margin-right"
+                    style="font-size: 3.5rem!important;"></i>
+                <h1 style="font-size: 1.4rem!important;">EMAIL</h1>
+                <h3><a href="mailto:petra.cimrmanova@seznam.cz">petra.cimrmanova@seznam.cz</a></h3>
+            </div>
+            <div class="w3-col m3 w3-margin-bottom" style="text-align: center">
+                <i class="fa fa-phone w3-padding-32 w3-text-opacity w3-margin-right"
+                    style="font-size: 3.5rem!important;"></i>
+                <h1 style="font-size: 1.4rem!important;">TELEFON</h1>
+                <h3><a href="tel:+420 604 919 106">+420 604 919 106</a><br>(Po-Pá 08:00-16:00)</h3>
+            </div>
+            <div class="w3-col m3 w3-margin-bottom" style="text-align: center;">
+                <i class="fa fa-map-marker w3-padding-32 w3-text-opacity w3-margin-right;"
+                    style="font-size: 3.5rem!important;"></i>
+                <h1 style="font-size: 1.4rem!important;">ADRESA</h1>
+                <h3><a
+                        href="https://www.google.com/maps?client=safari&rls=en&output=search&q=svehlova+1282/20+lovosice&source=lnms&entry=mc&sa=X&ved=2ahUKEwj47amaiMuAAxXPNuwKHbJpDo0Q0pQJegQICRAB">Švehlova
+                        1282/20<br>41002 Lovosice</a></h3>
+            </div>
+            <div class="w3-col m3 w3-margin-bottom" style="text-align: center;">
+                <i class="fa fa-user w3-padding-32 w3-text-opacity w3-margin-right;"
+                    style="font-size: 3.5rem!important;"></i>
+                <h1 style="font-size: 1.4rem!important;">IČO & DIČ</h1>
+                <h3 style="margin-bottom: 0px!important;"><a href="https://apl.czso.cz/res/detail?ico=49104896">IČO
+                        49104896</a></h3>
+                <h3 style="margin-top: 0px!important;"><a
+                        href="https://www.rzp.cz/cgi-bin/aps_cacheWEB.sh?VSS_SERV=ZVWSBJFND&PRESVYBER=0&VYPIS=2&ICO=49104896&Action=Search">DIČ
+                        CZ7361052666</a></h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Impresum -->
+    <footer class="w3-container w3-padding-64 w3-center w3-opacity" id="impresum">
+        <div class="w3-xlarge w3-padding-32">
+        </div>
+        <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    </footer>
+
+    <script>
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function myFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
