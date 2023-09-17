@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name='robots' content='noindex,nofollow' />
+    <title>Subscription-days Counter</title>
+    <style>
+        div {
+            text-align: center;
+            font-family: Verdana;
+            font-size: 20px;
+            margin: auto;
+            width: 50%;
+            padding: 150px;
+            line-height: 40px;
+        }
+
+        p {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <label for="subsPrice">Cena: </label>
+        <input type="text" id="subsPrice" name="subsPrice"><br>
+        <label for="startDate">Od: </label>
+        <input type="date" id="startDate" name="startDate"><br>
+        <label for="endDate"> Do: </label>
+        <input type="date" id="endDate" name="enDate"><br>
+        <button onclick="/*document.write*/(calculate())">Spočítat</button>
+        <p id="output"></p>
+    </div>
+    <script>
+        function calculate() {
+            let subsPrice = document.getElementById("subsPrice").value;
+
+            let startDate = document.getElementById("startDate").value;
+            //console.log(document.getElementById("startDate").value);
+            let startDateStringSplitted = startDate.split("-");
+            let startDay = startDateStringSplitted[2];
+            let startMonth = startDateStringSplitted[1];
+            let startYear = startDateStringSplitted[0];
+
+            let endDate = document.getElementById("endDate").value;
+            //console.log(document.getElementById("endDate").value);
+            let endDateStringSplitted = endDate.split("-");
+            let endDay = endDateStringSplitted[2];
+            let endMonth = endDateStringSplitted[1];
+            let endYear = endDateStringSplitted[0];
+
+
+            let payYears = [];
+
+            let daysTotal = 0;
+
+            let endFirstYear = startYear + "-12-31";
+            let daysInFirstYear = dayOfYear(endFirstYear) - dayOfYear(startDate) + 1;
+
+            let firstPayYear = { id: 1, days: daysInFirstYear };
+            payYears.push(firstPayYear);
+            daysTotal = daysTotal + daysInFirstYear;
+
+            for (let i = (parseInt(startYear) + 1); i <= parseInt(endYear); i++) {
+                if (i < parseInt(endYear)) {
+                    let startWholeYear = i + "-1-1";
+                    let endWholeYear = i + "-12-31";
+                    let daysInWholeYear = dayOfYear(endWholeYear) - dayOfYear(startWholeYear) + 1;
+                    let payWholeYear = { id: (i - startYear + 1), days: daysInWholeYear };
+                    payYears.push(payWholeYear);
+                    daysTotal = daysTotal + daysInWholeYear;
+                } else {
+                    let startLastYear = i + "-1-1";
+                    let daysInLastYear = dayOfYear(endDate) - dayOfYear(startLastYear) + 1;
+                    let payLastYear = { id: (i - startYear + 1), days: daysInLastYear }
+                    payYears.push(payLastYear);
+                    daysTotal = daysTotal + daysInLastYear;
+                }
+            }
+
+            let costPerDay = parseFloat(subsPrice) / daysTotal;
+
+            const outputContainer = document.getElementById("output");
+            payYears.forEach(py => {
+                let costPerPayYear = costPerDay * py.days;
+                const row = document.createElement("p");
+                row.innerHTML = (py.id + ". rok: " + py.days + " dní -> " + costPerPayYear.toFixed(2) + " CZK");
+                outputContainer.appendChild(row);
+            });
+
+
+
+            //Calulates a day of the year (0-365/366)
+            function dayOfYear(dateString) {
+                let dateStringSplitted = dateString.split("-");
+
+                let dateIntSplitted = parseInt(dateStringSplitted[0]);
+                let dayInMonth = parseInt(dateStringSplitted[2]);
+
+                let dayInYear = 0;
+
+                let daysInFebruary = 28;
+
+                if (((dateIntSplitted % 4 == 0 && dateIntSplitted % 100 != 0)) || (dateIntSplitted % 400 == 0)) {
+                    daysInFebruary = 29;
+                }
+
+                switch (parseInt(dateStringSplitted[1])) {
+                    case 1:
+                        dayInYear = dayInMonth;
+                        break;
+                    case 2:
+                        dayInYear = 31 + dayInMonth;
+                        break;
+                    case 3:
+                        dayInYear = 31 + daysInFebruary + dayInMonth;
+                        break;
+                    case 4:
+                        dayInYear = 31 + daysInFebruary + 31 + dayInMonth;
+                        break;
+                    case 5:
+                        dayInYear = 31 + daysInFebruary + 31 + 30 + dayInMonth;
+                        break;
+                    case 6:
+                        dayInYear = 31 + daysInFebruary + 31 + 30 + 31 + dayInMonth;
+                        break;
+                    case 7:
+                        dayInYear = 31 + daysInFebruary + 31 + 30 + 31 + 30 + dayInMonth;
+                        break;
+                    case 8:
+                        dayInYear = 31 + daysInFebruary + 31 + 30 + 31 + 30 + 31 + dayInMonth;
+                        break;
+                    case 9:
+                        dayInYear = 31 + daysInFebruary + 31 + 30 + 31 + 30 + 31 + 31 + dayInMonth;
+                        break;
+                    case 10:
+                        dayInYear = 31 + daysInFebruary + 31 + 30 + 31 + 30 + 31 + 31 + 30 + dayInMonth;
+                        break;
+                    case 11:
+                        dayInYear = 31 + daysInFebruary + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31 + dayInMonth;
+                        break;
+                    case 12:
+                        dayInYear = 31 + daysInFebruary + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 + dayInMonth;
+                        break;
+                    default:
+                        return -1;
+                }
+
+                return dayInYear;
+            }
+        }
+    </script>
+</body>
+
+</html>
